@@ -61,5 +61,22 @@ console.log("Division: ", div);
 console.log("My name is " + firstName + " and I live in " + city);
 
 //template literals use ``
-
 console.log(`My name is ${firstName} and I live in ${city}.`);
+
+//constants
+//const should use capitalized letters
+const CONSTANTNAME = "Doesn't change";
+const PI = 3.14;
+
+console.log(CONSTANTNAME, PI);
+
+//let CONSTANTNAME = "changed" //
+// cannot change a constant
+
+//rule of thumb: you can use const by default
+//switch to let only when you need to change values
+
+//
+//
+//
+//
