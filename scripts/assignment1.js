@@ -26,3 +26,29 @@ console.log(
     "Status: " +
     restaurantOpenClosed,
 );
+
+dailyDish = "Chicken Kebabs";
+availableTables = 8;
+restaurantOpenClosed = "closed";
+
+console.log(
+  "Restaurant Report (update): " +
+    "\n" +
+    "Restaurant Name: " +
+    restaurantName +
+    "\n" +
+    "Cuisine: " +
+    cuisineType +
+    "\n" +
+    "Location: " +
+    cityLocation +
+    "\n" +
+    "Today's Special: " +
+    dailyDish +
+    "\n" +
+    "Number of Tables Available: " +
+    availableTables +
+    "\n" +
+    "Status: " +
+    restaurantOpenClosed,
+);
