@@ -21,11 +21,11 @@ function calculateTotal(price, tax) {
 }
 
 console.log(
-  "The price of a steak dinner is $" + calculateTotal(43, 0.08) + ".",
+  "The price of a steak dinner is $" + calculateTotal(43, 0.08) + "."
 );
 
 console.log(
-  "The price of the vegan special is $" + calculateTotal(25, 0.08) + ".",
+  "The price of the vegan special is $" + calculateTotal(25, 0.08) + "."
 );
 
 console.log(
