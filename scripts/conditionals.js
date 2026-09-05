@@ -73,7 +73,7 @@ checkAge();*/
 /*
 function getOutfit() {
   let temp = Number(prompt("Enter the current temperature in Celsius: "));
-  if (temp < 15) {
+  if (temp <= 15) {
     console.log("You should wear a jacket.");
   } else if (temp >= 15 && weather <= 25) {
     console.log("You should wear a sweater.");
