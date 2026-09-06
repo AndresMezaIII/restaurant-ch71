@@ -113,7 +113,7 @@ for (i = 0; i < SALES.length; i++) {
 let output = "";
 
 for(let i = 0; i < DAYS.length; i++) {
-    output += `<p> ${DAYS[i]}: $${SALES[i]} </p><br/>`;
+    output = `<p> ${DAYS[i]}: $${SALES[i]} </p><br/>`;
 }
 //innerHTML & document.write are deprecated
-document.getElementById("sales").innerHTML = output;
+document.getElementById("sales").innerHTML += output;
