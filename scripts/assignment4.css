@@ -1,3 +1,27 @@
-#report {
-    
+.paragraph {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
 }
+
+.paragraph-2 {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.zero-span {
+    width: 40%;
+}
+
+.span-1 {
+    width: 40%;
+}
+
+.span-2 {
+    width: 40%;
+}
+
