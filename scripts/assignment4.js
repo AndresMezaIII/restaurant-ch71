@@ -1,3 +1,5 @@
+console.log("assignment4.js connected");
+
 const RESTAURANTNAME = "The Royal Lounge";
 
 const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -43,14 +45,19 @@ function getDayLabel(sales) {
 function generateReport() {
   let output = "";
   let total = 0;
-  for (i = 0; i < DAYS.length; i++) {
+  for (let i = 0; i < DAYS.length; i++) {
+    //console.log(total);
+    let label = getDayLabel(SALES[i]);
     total += SALES[i];
-    console.log(total);
-    sales = SALES[i];
-    console.log(getDayLabel(sales));
-    averageSales = total / SALES.length;
-    console.log(averageSales.toFixed(2));
+    output += `<p>${DAYS[i]}      $${SALES[i].toFixed(2)}     ${label}</p>`;
+    //console.log(getDayLabel(sales));
+    
+    //console.log(averageSales.toFixed(2));
   }
+  document.getElementById("report").innerHTML += output;
+  document.getElementById("report").innerHTML += `<br><br>Weekly Sales Total: $${total.toFixed(2)}`;
+  document.getElementById("report").innerHTML += `<br>Weekly Average Sale: $${(total / SALES.length).toFixed(2)}`;
+
 }
 
 generateReport();
