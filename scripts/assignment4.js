@@ -55,35 +55,37 @@ function generateReport() {
 
   document.getElementById("report").innerHTML += output;
 
-  document.getElementById("report").innerHTML += `<br><p class="paragraph-2"><span>Weekly Sales Total:</span><span class="span-2">$${total.toFixed(2)}</span></p>`;
+  document.getElementById("report").innerHTML += `<br><p class="paragraph-2"><span>Weekly Sales Total:</span><span class="span-2">$${total.toFixed(2)}</span></p><br>`;
 
-  document.getElementById("report").innerHTML += `<p class="paragraph-2"><span>Weekly Average Sales:</span><span class="span-2">$${(total / SALES.length).toFixed(2)}</span></p>`;
+  document.getElementById("report").innerHTML += `<p class="paragraph-2"><span>Weekly Average Sales:</span><span class="span-2">$${(total / SALES.length).toFixed(2)}</span></p><br>`;
 }
 
 generateReport();
 
 let total = 0;
-let quantityChicken = 0;
-let quantitySteak = 0;
 let totalItems = 0;
 let output = "";
 let bill = 0;
+let quantChicken = 0;
+let quantSteak = 0;
 
 for (let i = 0; i < 3; i++) {
-  let order = prompt("Please Enter Your Order: Chicken $25 or Steak $40");
+  let order = prompt("Please Enter Your Order: Chicken..$25 or Steak..$40");
   if (order === "chicken") {
-    quantityChicken += 1;
     total += 25;
-    output = `<br><br><p>${quantityChicken}x Chicken..........$${total}</p>`;
-    
+    quantChicken += 1;
   } else if (order === "steak") {
-    quantitySteak += 1;
     total += 40;
-    output = `<br><br><p>${quantitySteak}x Steak.........$${total}</p>`;
+    quantSteak += 1;
   }
 }
 
-document.getElementById("report").innerHTML += output;
+document.getElementById("report").innerHTML += `<p>-----ORDER-----</p>`;
+/*document.getElementById("report").innerHTML += output;*/
+
+document.getElementById("report").innerHTML += `<p>${quantChicken} x Chicken</p>`
+
+document.getElementById("report").innerHTML += `<p>${quantSteak} x Steak</p>`;
 
 bill = calculateTotal(total, .08);
 
