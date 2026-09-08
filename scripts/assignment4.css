@@ -5,7 +5,7 @@
 }
 
 .paragraph-2 {
-    width: 35%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,14 +14,14 @@
 }
 
 .zero-span {
-    width: 40%;
+    width: 20%;
 }
 
 .span-1 {
-    width: 40%;
+    width: 20%;
 }
 
 .span-2 {
-    width: 40%;
+    width: 25%;
 }
 

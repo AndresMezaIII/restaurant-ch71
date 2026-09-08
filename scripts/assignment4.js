@@ -46,13 +46,9 @@ function generateReport() {
   let output = "";
   let total = 0;
   for (let i = 0; i < DAYS.length; i++) {
-    //console.log(total);
     let label = getDayLabel(SALES[i]);
     total += SALES[i];
     output += `<p class="paragraph"><span class="zero-span">${DAYS[i]}</span><span class="span-1">$${SALES[i].toFixed(2)}</span><span>${label}</span></p>`;
-    //console.log(getDayLabel(sales));
-    
-    //console.log(averageSales.toFixed(2));
   }
   document.getElementById("report").innerHTML += output;
   document.getElementById("report").innerHTML += `<br><p class="paragraph-2"><span>Weekly Sales Total:</span><span class="span-2">$${total.toFixed(2)}</span></p>`;
