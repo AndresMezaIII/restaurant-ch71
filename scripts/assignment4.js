@@ -23,10 +23,12 @@ function applyMemberDiscount(price, isMember) {
 }
 
 function checkDelivery(total) {
-  if (Number(total) >= 30) {
+  if (total >= 30) {
     console.log("Your order qualifies for free delivery.\n\n");
+    document.getElementById("report").innerHTML += `<p>Free delivery</p>`;
   } else {
     console.log("Delivery fees apply.\n\n");
+    document.getElementById("report").innerHTML += `<p>$5 delivery fee: Your new total is $${calculateTotal(bill) + 5}</p>`;
   }
 }
 
@@ -50,12 +52,45 @@ function generateReport() {
     total += SALES[i];
     output += `<p class="paragraph"><span class="zero-span">${DAYS[i]}</span><span class="span-1">$${SALES[i].toFixed(2)}</span><span>${label}</span></p>`;
   }
-  document.getElementById("report").innerHTML += output;
-  document.getElementById("report").innerHTML += `<br><p class="paragraph-2"><span>Weekly Sales Total:</span><span class="span-2">$${total.toFixed(2)}</span></p>`;
-  document.getElementById("report").innerHTML += `<p class="paragraph-2"><span>Weekly Average Sales:</span><span class="span-2">$${(total / SALES.length).toFixed(2)}</span></p>`;
 
+  document.getElementById("report").innerHTML += output;
+
+  document.getElementById("report").innerHTML += `<br><p class="paragraph-2"><span>Weekly Sales Total:</span><span class="span-2">$${total.toFixed(2)}</span></p>`;
+
+  document.getElementById("report").innerHTML += `<p class="paragraph-2"><span>Weekly Average Sales:</span><span class="span-2">$${(total / SALES.length).toFixed(2)}</span></p>`;
 }
 
 generateReport();
+
+let total = 0;
+let quantityChicken = 0;
+let quantitySteak = 0;
+let totalItems = 0;
+let output = "";
+let bill = 0;
+
+for (let i = 0; i < 3; i++) {
+  let order = prompt("Please Enter Your Order: Chicken $25 or Steak $40");
+  if (order === "chicken") {
+    quantityChicken += 1;
+    total += 25;
+    output = `<br><br><p>${quantityChicken}x Chicken..........$${total}</p>`;
+    
+  } else if (order === "steak") {
+    quantitySteak += 1;
+    total += 40;
+    output = `<br><br><p>${quantitySteak}x Steak.........$${total}</p>`;
+  }
+}
+
+document.getElementById("report").innerHTML += output;
+
+bill = calculateTotal(total, .08);
+
+document.getElementById("report").innerHTML += `<p>Total: $${bill.toFixed(2)} </p>`;
+
+checkDelivery(total);
+
+
 
 
